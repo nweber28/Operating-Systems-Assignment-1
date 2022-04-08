@@ -25,8 +25,13 @@ Documentation:
 
 The table.h and table.c files are made to hold the shared memory and the functions that both the producer and consumer use.
 
-When the producer is run, it writes a random number to one of the two memory blocks.
-Once both memory blocks are full it has to wait for the consumer to consume an item before it can produce another item to the block.
+When the producer is run, it creates a random integer, converts it to a string, and this value is placed in a memory block that is stored in a table that
+holds two memory blocks total.
+
+Through the use of two semaphores, the producer and consumer communicate when each other enter the critical section, so that the other does not perform
+any changes to memory during this time.
+
+The two memory blocks are created as shared memory object instances.
 
 The producer has 10 integers that it wants to play into memory for the consumer to consume.
 
@@ -34,5 +39,6 @@ Once all 10 integers have been produced the producer program terminates.
 
 The consumer.elf program can be terminated by using Ctrl + C in the terminal.
 
-At the conclusion of this program, the producer will have produced ten integers and the consumer will consume all ten using a memory buffer that can
-hold two integer values at a time.
+At the end of this program ten integers will be produced and placed into memory and all ten will be consumed. However, only two integers may be in the memory buffer at once.
+
+-Nick Weber
