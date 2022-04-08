@@ -41,4 +41,6 @@ The consumer.elf program can be terminated by using Ctrl + C in the terminal.
 
 At the end of this program ten integers will be produced and placed into memory and all ten will be consumed. However, only two integers may be in the memory buffer at once.
 
+An example of this process occurring is located in 'prodConsExample.png' in the repo folder where the .c files are stored as well.
+
 -Nick Weber
